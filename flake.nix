@@ -19,7 +19,7 @@
       {
         packages.default = pkgs.rustPlatform.buildRustPackage {
           pname = "code2prompt";
-          version = "2.0.0"; # Match version from Cargo.toml
+          version = "2.0.0";
           src = ./.;
 
           cargoLock = {
@@ -30,6 +30,8 @@
             pkg-config
             rustToolchain
             openssl.dev
+            perl
+            cmake
           ];
 
           buildInputs = with pkgs; [
@@ -54,6 +56,8 @@
             rust-analyzer
             openssl
             pkg-config
+            perl
+            cmake
           ];
 
           shellHook = ''
